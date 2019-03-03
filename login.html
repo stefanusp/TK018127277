@@ -1,0 +1,63 @@
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+<!doctype html>
+ <html lang="en">
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+ <title>PHP JQuery - Trick Ajax external site</title>
+   
+<script type="text/javascript">
+
+    url= "http://stefanuspanirman.com/oauth/index.php/api/login";
+    url= "http://stefanuspanirman.com/wrapper.php";
+// $.ajax(url, {
+    // type:"POST",
+    // dataType:"json",
+    // data:{action:"something"}, 
+    // success:function(data, textStatus, jqXHR) {alert("success");},
+    // error: function(jqXHR, textStatus, errorThrown) {alert("failure");}
+// });
+// Assign handlers immediately after making the request,
+// and remember the jqXHR object for this request
+ $.ajax({
+            url: url,
+            type: "POST",
+            crossDomain: true,
+            // data: JSON.stringify(somejson),
+            dataType: "json",
+            success: function (response) {
+                var resp = JSON.parse(response)
+                alert(resp.status);
+            },
+            error: function (xhr, status) {
+                alert("error");
+            }
+        });
+// Perform other work here ...
+ 
+// Set another completion function for the request above
+// jqxhr.always(function() {
+  // alert( "second complete" );
+// });
+/* var request = new XMLHttpRequest();
+var params = "action=something";
+request.open('POST', url, true);
+request.onreadystatechange = function() {if (request.readyState==4) alert("It worked!");};
+request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+request.setRequestHeader("Content-length", params.length);
+request.setRequestHeader("Connection", "close");
+request.send(params);
+//$.ajax({
+$.ajax({
+	url: "https://stefanuspanirman.com/wrapper.php",
+  beforeSend: function( xhr ) {
+    //xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+  }
+})
+  .done(function( data ) {
+    if ( console && console.log ) {
+      console.log( "Sample of data:", data.slice( 0, 100 ) );
+    }
+  });  */
+</script>
+</head>
