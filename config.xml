@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.pgb.brewapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="https://phonegap.com/ns/1.0">
-	<name>PhoneGap Build App</name>
+	<name>Bakti Suci</name>
 	<description>
-		This app brews beer.
+		Aplikasi Karyawan
 	</description>
 
-	<author email="seymourbutts@phonegap.com" href="https://phonegap.com">
-	   PhoneGap Team
+	<author email="admin@baktisuci.com" href="https://baktisuci.com">
+	   Bakti Suci Team
 	</author>
-
+	<access uri="http://stefanuspanirman.com" subdomains="true" />
 	<preference name="phonegap-version" value="cli-6.0.0" />
 </widget>
